@@ -2,4 +2,4 @@
  * Public API Surface of unimi
  */
 
-export * from './lib/unimi.module';
+export * from "./lib/unimi.module";

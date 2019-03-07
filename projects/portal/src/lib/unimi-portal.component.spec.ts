@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { UnimiPortalComponent } from './unimi-portal.component';
+import { UnimiPortalComponent } from "./unimi-portal.component";
 
-describe('UnimiPortalComponent', () => {
+describe("UnimiPortalComponent", () => {
   let component: UnimiPortalComponent;
   let fixture: ComponentFixture<UnimiPortalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UnimiPortalComponent ]
-    })
-    .compileComponents();
+      declarations: [UnimiPortalComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('UnimiPortalComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
