@@ -1,19 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'unimi-portal-example',
+  selector: "unimi-portal-example",
   template: `
     <p>
       unimi-portal works!
     </p>
   `,
-  styles: []
+  styles: [],
 })
 export class UnimiPortalComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

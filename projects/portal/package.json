@@ -1,8 +1,9 @@
 {
-  "name": "portal",
+  "name": "@unimi/portal",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "^7.2.0",
-    "@angular/core": "^7.2.0"
+    "@angular/common": ">=7.2.0",
+    "@angular/core": ">=7.2.0",
+    "@unimi/unimi": ">=0"
   }
 }

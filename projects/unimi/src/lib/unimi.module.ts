@@ -1,10 +1,9 @@
-import { NgModule } from '@angular/core';
-import { UnimiComponent } from './unimi.component';
+import { NgModule } from "@angular/core";
+import { UnimiPortalModule } from "@unimi/portal";
 
 @NgModule({
-  declarations: [UnimiComponent],
-  imports: [
-  ],
-  exports: [UnimiComponent]
+  imports: [],
+  declarations: [],
+  exports: [UnimiPortalModule],
 })
-export class UnimiModule { }
+export class UnimiModule {}
