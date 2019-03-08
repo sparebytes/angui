@@ -20,6 +20,8 @@
       "dom"
     ],
     "paths": {
+      "@unimi/address": ["dist/address"],
+      "@unimi/address/*": ["dist/address/*"],
       "@unimi/unimi": ["dist/unimi"],
       "@unimi/unimi/*": ["dist/unimi/*"],
       "@unimi/portal": ["dist/portal"],

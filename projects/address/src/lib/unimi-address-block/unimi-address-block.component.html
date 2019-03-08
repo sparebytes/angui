@@ -1,0 +1,10 @@
+<div class="unimi-address-street1" *ngIf="address.street1">{{ address.street1 }}</div>
+<div class="unimi-address-street2" *ngIf="address.street2">{{ address.street2 }}</div>
+<div class="unimi-address-street3" *ngIf="address.street3">{{ address.street3 }}</div>
+<div class="unimi-address-city-state-zip" *ngIf="(address | unimiAddressCityStateZip)">{{ address | unimiAddressCityStateZip }}</div>
+<div
+  class="unimi-address-countryCode"
+  *ngIf="address.countryCode && address.countryCode !== 'US' && address.countryCode !== 'USA'"
+>
+  {{ address.countryCode }}
+</div>

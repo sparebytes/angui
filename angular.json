@@ -205,6 +205,41 @@
           }
         }
       }
+    },
+    "address": {
+      "root": "projects/address",
+      "sourceRoot": "projects/address/src",
+      "projectType": "library",
+      "prefix": "unimi-address",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/address/tsconfig.lib.json",
+            "project": "projects/address/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/address/src/test.ts",
+            "tsConfig": "projects/address/tsconfig.spec.json",
+            "karmaConfig": "projects/address/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/address/tsconfig.lib.json",
+              "projects/address/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "unimi-app"

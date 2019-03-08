@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "clean": "rimraf dist",
-    "build:lib": "ng build portal && ng build unimi",
+    "build:lib": "ng build address && ng build portal && ng build unimi",
     "build:app": "yarn run build:lib && ng build unimi-app"
   },
   "private": true,
@@ -52,6 +52,7 @@
     "rimraf": "^2.6.3",
     "ts-node": "~7.0.0",
     "tsickle": ">=0.34.0",
+    "tslib": "^1.9.0",
     "tslint": "~5.13.1",
     "typescript": "~3.2.4"
   }
