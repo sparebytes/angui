@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "lazyModules": ["src/app/lazy-dialog-example/lazy-dialog-example.module"],
             "outputPath": "dist/angy-app",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -233,6 +234,41 @@
             "tsConfig": [
               "projects/address/tsconfig.lib.json",
               "projects/address/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "lazy-dialog": {
+      "root": "projects/lazy-dialog",
+      "sourceRoot": "projects/lazy-dialog/src",
+      "projectType": "library",
+      "prefix": "angy-lazy-dialog",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/lazy-dialog/tsconfig.lib.json",
+            "project": "projects/lazy-dialog/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/lazy-dialog/src/test.ts",
+            "tsConfig": "projects/lazy-dialog/tsconfig.spec.json",
+            "karmaConfig": "projects/lazy-dialog/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/lazy-dialog/tsconfig.lib.json",
+              "projects/lazy-dialog/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
