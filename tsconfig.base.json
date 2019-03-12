@@ -20,12 +20,12 @@
       "dom"
     ],
     "paths": {
-      "@unimi/address": ["dist/address"],
-      "@unimi/address/*": ["dist/address/*"],
-      "@unimi/unimi": ["dist/unimi"],
-      "@unimi/unimi/*": ["dist/unimi/*"],
-      "@unimi/portal": ["dist/portal"],
-      "@unimi/portal/*": ["dist/portal/*"]
+      "@angy/address": ["dist/address"],
+      "@angy/address/*": ["dist/address/*"],
+      "@angy/angy": ["dist/angy"],
+      "@angy/angy/*": ["dist/angy/*"],
+      "@angy/portal": ["dist/portal"],
+      "@angy/portal/*": ["dist/portal/*"]
     }
   }
 }

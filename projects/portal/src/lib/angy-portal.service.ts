@@ -1,18 +1,18 @@
 import { Injectable, OnDestroy } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
-import { UnimiPortalSourceDirective } from "./unimi-portal-source.directive";
+import { AngyPortalSourceDirective } from "./angy-portal-source.directive";
 
 @Injectable({ providedIn: "root" })
-export class UnimiPortalService implements OnDestroy {
+export class AngyPortalService implements OnDestroy {
   constructor() {}
-  unimiPortalSourceDirectives$ = new BehaviorSubject<UnimiPortalSourceDirective[]>([]);
+  angyPortalSourceDirectives$ = new BehaviorSubject<AngyPortalSourceDirective[]>([]);
   ngOnDestroy() {
-    this.unimiPortalSourceDirectives$.next([]);
+    this.angyPortalSourceDirectives$.next([]);
   }
-  add(unimiPortalSourceDirective: UnimiPortalSourceDirective) {
-    this.unimiPortalSourceDirectives$.next([...this.unimiPortalSourceDirectives$.value, unimiPortalSourceDirective]);
+  add(angyPortalSourceDirective: AngyPortalSourceDirective) {
+    this.angyPortalSourceDirectives$.next([...this.angyPortalSourceDirectives$.value, angyPortalSourceDirective]);
   }
-  remove(unimiPortalSourceDirective: UnimiPortalSourceDirective) {
-    this.unimiPortalSourceDirectives$.next(this.unimiPortalSourceDirectives$.value.filter(p => p !== unimiPortalSourceDirective));
+  remove(angyPortalSourceDirective: AngyPortalSourceDirective) {
+    this.angyPortalSourceDirectives$.next(this.angyPortalSourceDirectives$.value.filter(p => p !== angyPortalSourceDirective));
   }
 }

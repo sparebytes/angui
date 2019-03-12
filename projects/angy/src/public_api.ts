@@ -1,5 +1,5 @@
 /*
- * Public API Surface of unimi
+ * Public API Surface of angy
  */
 
-export * from "./lib/unimi.module";
+export * from "./lib/angy.module";

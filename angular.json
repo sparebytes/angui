@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "unimi-app": {
+    "angy-app": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/unimi-app",
+            "outputPath": "dist/angy-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "port": 4601,
-            "browserTarget": "unimi-app:build"
+            "browserTarget": "angy-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "unimi-app:build:production"
+              "browserTarget": "angy-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "unimi-app:build"
+            "browserTarget": "angy-app:build"
           }
         },
         "test": {
@@ -108,7 +108,7 @@
         }
       }
     },
-    "unimi-app-e2e": {
+    "angy-app-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -117,11 +117,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "unimi-app:serve"
+            "devServerTarget": "angy-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "unimi-app:serve:production"
+              "devServerTarget": "angy-app:serve:production"
             }
           }
         },
@@ -136,33 +136,33 @@
         }
       }
     },
-    "unimi": {
-      "root": "projects/unimi",
-      "sourceRoot": "projects/unimi/src",
+    "angy": {
+      "root": "projects/angy",
+      "sourceRoot": "projects/angy/src",
       "projectType": "library",
-      "prefix": "unimi",
+      "prefix": "angy",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/unimi/tsconfig.lib.json",
-            "project": "projects/unimi/ng-package.json"
+            "tsConfig": "projects/angy/tsconfig.lib.json",
+            "project": "projects/angy/ng-package.json"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/unimi/src/test.ts",
-            "tsConfig": "projects/unimi/tsconfig.spec.json",
-            "karmaConfig": "projects/unimi/karma.conf.js"
+            "main": "projects/angy/src/test.ts",
+            "tsConfig": "projects/angy/tsconfig.spec.json",
+            "karmaConfig": "projects/angy/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/unimi/tsconfig.lib.json",
-              "projects/unimi/tsconfig.spec.json"
+              "projects/angy/tsconfig.lib.json",
+              "projects/angy/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -175,7 +175,7 @@
       "root": "projects/portal",
       "sourceRoot": "projects/portal/src",
       "projectType": "library",
-      "prefix": "unimi-portal",
+      "prefix": "angy-portal",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -210,7 +210,7 @@
       "root": "projects/address",
       "sourceRoot": "projects/address/src",
       "projectType": "library",
-      "prefix": "unimi-address",
+      "prefix": "angy-address",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -242,5 +242,5 @@
       }
     }
   },
-  "defaultProject": "unimi-app"
+  "defaultProject": "angy-app"
 }

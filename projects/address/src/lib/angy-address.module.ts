@@ -1,15 +1,15 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { UnimiAddressBlockComponent } from "./unimi-address-block/unimi-address-block.component";
-import { UnimiAddressCityStateZipPipe } from "./unimi-address-city-state-zip.pipe";
-import { UnimiAddressCityStatePipe } from "./unimi-address-city-state.pipe";
-import { UnimiNormalizeAddressPipe } from "./unimi-normalize-address.pipe";
+import { AngyAddressBlockComponent } from "./angy-address-block/angy-address-block.component";
+import { AngyAddressCityStateZipPipe } from "./angy-address-city-state-zip.pipe";
+import { AngyAddressCityStatePipe } from "./angy-address-city-state.pipe";
+import { AngyNormalizeAddressPipe } from "./angy-normalize-address.pipe";
 
-const exported = [UnimiAddressBlockComponent, UnimiAddressCityStateZipPipe, UnimiAddressCityStatePipe, UnimiNormalizeAddressPipe];
+const exported = [AngyAddressBlockComponent, AngyAddressCityStateZipPipe, AngyAddressCityStatePipe, AngyNormalizeAddressPipe];
 
 @NgModule({
   imports: [CommonModule],
   declarations: [exported],
   exports: [exported],
 })
-export class UnimiAddressModule {}
+export class AngyAddressModule {}

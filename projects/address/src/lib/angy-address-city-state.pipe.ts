@@ -1,11 +1,11 @@
 import { Pipe, PipeTransform } from "@angular/core";
-import { UnimiAddressDisplayService } from "./unimi-address-display.service";
-import { UnimiAddressLoose } from "./unimi-address.models";
+import { AngyAddressDisplayService } from "./angy-address-display.service";
+import { AngyAddressLoose } from "./angy-address.models";
 
-@Pipe({ name: "unimiAddressCityState" })
-export class UnimiAddressCityStatePipe implements PipeTransform {
-  constructor(private unimiAddressDisplayService: UnimiAddressDisplayService) {}
-  transform(address: UnimiAddressLoose | null): string | null {
-    return this.unimiAddressDisplayService.getCityState(address);
+@Pipe({ name: "angyAddressCityState" })
+export class AngyAddressCityStatePipe implements PipeTransform {
+  constructor(private angyAddressDisplayService: AngyAddressDisplayService) {}
+  transform(address: AngyAddressLoose | null): string | null {
+    return this.angyAddressDisplayService.getCityState(address);
   }
 }

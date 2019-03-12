@@ -1,9 +1,9 @@
 /*
- * Public API Surface of unimi-portal
+ * Public API Surface of angy-portal
  */
 
-export * from "./lib/unimi-portal-sink.component";
-export * from "./lib/unimi-portal-source.directive";
-export * from "./lib/unimi-portal.module";
-export * from "./lib/unimi-portal.service";
+export * from "./lib/angy-portal-sink.component";
+export * from "./lib/angy-portal-source.directive";
+export * from "./lib/angy-portal.module";
+export * from "./lib/angy-portal.service";
 

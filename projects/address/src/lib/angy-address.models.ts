@@ -1,4 +1,4 @@
-export interface UnimiAddressStrict {
+export interface AngyAddressStrict {
   street1: string;
   street2: string;
   street3: string;
@@ -8,7 +8,7 @@ export interface UnimiAddressStrict {
   countryCode: string;
 }
 
-export interface UnimiAddressLoose {
+export interface AngyAddressLoose {
   street1?: string | null;
   street2?: string | null;
   street3?: string | null;
@@ -36,8 +36,8 @@ export interface UnimiAddressLoose {
   countryCode?: string | null;
 }
 
-export module UnimiAddressLoose {
-  export function normalize(address: UnimiAddressLoose | null | undefined): UnimiAddressStrict {
+export module AngyAddressLoose {
+  export function normalize(address: AngyAddressLoose | null | undefined): AngyAddressStrict {
     if (address == null) {
       address = {};
     }

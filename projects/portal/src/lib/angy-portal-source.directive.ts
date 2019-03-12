@@ -1,23 +1,23 @@
 import { TemplatePortal } from "@angular/cdk/portal";
 import { Directive, Input, OnDestroy, OnInit, TemplateRef, ViewContainerRef } from "@angular/core";
-import { UnimiPortalService } from "./unimi-portal.service";
+import { AngyPortalService } from "./angy-portal.service";
 
-@Directive({ selector: "[unimiPortalSource]" })
-export class UnimiPortalSourceDirective implements OnInit, OnDestroy {
+@Directive({ selector: "[angyPortalSource]" })
+export class AngyPortalSourceDirective implements OnInit, OnDestroy {
   templatePortal: TemplatePortal<any>;
   constructor(
-    private UnimiPortalService: UnimiPortalService,
+    private AngyPortalService: AngyPortalService,
     private templateRef: TemplateRef<any>,
     private viewContainerRef: ViewContainerRef,
   ) {
     this.templatePortal = new TemplatePortal(this.templateRef, this.viewContainerRef);
   }
   ngOnInit() {
-    this.UnimiPortalService.add(this);
+    this.AngyPortalService.add(this);
   }
   ngOnDestroy() {
-    this.UnimiPortalService.remove(this);
+    this.AngyPortalService.remove(this);
   }
-  @Input("unimiPortalSource")
+  @Input("angyPortalSource")
   portalName: string | null = null;
 }

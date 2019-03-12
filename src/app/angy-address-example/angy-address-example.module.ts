@@ -1,13 +1,13 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { UnimiAddressModule } from "@unimi/address";
-import { UnimiAddressExampleComponent } from "./unimi-address-example.component";
+import { AngyAddressModule } from "@angy/address";
+import { AngyAddressExampleComponent } from "./angy-address-example.component";
 
-const exported = [UnimiAddressExampleComponent];
+const exported = [AngyAddressExampleComponent];
 
 @NgModule({
-  imports: [CommonModule, UnimiAddressModule],
+  imports: [CommonModule, AngyAddressModule],
   declarations: [exported],
   exports: [exported],
 })
-export class UnimiAddressExampleModule {}
+export class AngyAddressExampleModule {}

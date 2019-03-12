@@ -1,18 +1,18 @@
 import { Component, Input } from "@angular/core";
-import { UnimiPortalService } from "./unimi-portal.service";
+import { AngyPortalService } from "./angy-portal.service";
 
 @Component({
-  selector: "unimiPortalSink,unimi-portal-sink",
+  selector: "angyPortalSink,angy-portal-sink",
   template: `
-    <ng-container *ngFor="let unimiPortalSourceDirective of (portalService.unimiPortalSourceDirectives$ | async)">
-      <ng-container *ngIf="unimiPortalSourceDirective.portalName === portalName">
-        <ng-template [cdkPortalOutlet]="unimiPortalSourceDirective.templatePortal"></ng-template>
+    <ng-container *ngFor="let angyPortalSourceDirective of (portalService.angyPortalSourceDirectives$ | async)">
+      <ng-container *ngIf="angyPortalSourceDirective.portalName === portalName">
+        <ng-template [cdkPortalOutlet]="angyPortalSourceDirective.templatePortal"></ng-template>
       </ng-container>
     </ng-container>
   `,
 })
-export class UnimiPortalSinkComponent {
-  constructor(public portalService: UnimiPortalService) {}
-  @Input("unimiPortalSink")
+export class AngyPortalSinkComponent {
+  constructor(public portalService: AngyPortalService) {}
+  @Input("angyPortalSink")
   portalName: string | null = null;
 }

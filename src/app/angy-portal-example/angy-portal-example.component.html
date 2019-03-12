@@ -7,32 +7,32 @@
 
 <br/><br/>
 
-<div *unimiPortalSource="'PortalA'">This goes to sink 1. Count is {{ count }}</div>
+<div *angyPortalSource="'PortalA'">This goes to sink 1. Count is {{ count }}</div>
 <ng-container *ngIf="toggle">
-	<div *unimiPortalSource="'PortalA'">This goes to sink 1 as well</div>
+	<div *angyPortalSource="'PortalA'">This goes to sink 1 as well</div>
 </ng-container>
 
-<div *unimiPortalSource="'PortalB'">This goes to sink 2</div>
-<div *unimiPortalSource="'PortalB'">
+<div *angyPortalSource="'PortalB'">This goes to sink 2</div>
+<div *angyPortalSource="'PortalB'">
 	This goes to sink 2 as well {{ foo }}
 	<button mat-raised-button (click)="count = count + 1" #testButton>Increment Count</button>
 </div>
 
 <div>
   Portal A <small>(copy 1)</small>:
-  <unimi-portal-sink unimiPortalSink="PortalA"></unimi-portal-sink>
+  <angy-portal-sink angyPortalSink="PortalA"></angy-portal-sink>
 </div>
 
 <br/><br/>
 
 <div>
   Portal A <small>(copy 2)</small>:
-  <unimi-portal-sink unimiPortalSink="PortalA"></unimi-portal-sink>
+  <angy-portal-sink angyPortalSink="PortalA"></angy-portal-sink>
 </div>
 
 <br/><br/>
 
 <div>
   Portal B:
-  <unimi-portal-sink unimiPortalSink="PortalB"></unimi-portal-sink>
+  <angy-portal-sink angyPortalSink="PortalB"></angy-portal-sink>
 </div>

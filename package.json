@@ -1,5 +1,5 @@
 {
-  "name": "unimi-app",
+  "name": "angy-app",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -9,8 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "clean": "rimraf dist",
-    "build:lib": "ng build address && ng build portal && ng build unimi",
-    "build:app": "yarn run build:lib && ng build unimi-app"
+    "build:lib": "ng build address && ng build portal && ng build angy",
+    "build:app": "yarn run build:lib && ng build angy-app"
   },
   "private": true,
   "dependencies": {

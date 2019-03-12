@@ -2,9 +2,9 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "paths": {
-      "@unimi/address": ["projects/address/src/public_api"],
-      "@unimi/unimi": ["projects/unimi/src/public_api"],
-      "@unimi/portal": ["projects/portal/src/public_api"]
+      "@angy/address": ["projects/address/src/public_api"],
+      "@angy/angy": ["projects/angy/src/public_api"],
+      "@angy/portal": ["projects/portal/src/public_api"]
     }
   }
 }
