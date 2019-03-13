@@ -57,6 +57,9 @@
                   "maximumError": "5mb"
                 }
               ]
+            },
+            "hot": {
+              "tsConfig": "src/tsconfig.hot.json"
             }
           }
         },
@@ -69,6 +72,9 @@
           "configurations": {
             "production": {
               "browserTarget": "angy-app:build:production"
+            },
+            "hot": {
+              "browserTarget": "angy-app:build:hot"
             }
           }
         },
