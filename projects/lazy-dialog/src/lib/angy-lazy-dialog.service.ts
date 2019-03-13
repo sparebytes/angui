@@ -57,7 +57,8 @@ export class AngyLazyDialogService implements OnDestroy {
     component: string;
     autoDestroy?: boolean | null;
     config?: MatDialogConfig<O>;
-  }): Promise<MatDialogRef<any, C>> {
+  }): Promise<AngyLazyOpenDialog> {
+    const autoDestroy = options.autoDestroy === true;
     const modulePath = this.getModulePath(options.module);
     const moduleFactory: NgModuleFactory<any> = await this.ngModuleFactoryLoader.load(modulePath);
     const moduleRef: NgModuleRef<any> = moduleFactory.create(this.injector);
@@ -72,17 +73,22 @@ export class AngyLazyDialogService implements OnDestroy {
       }
       const dialog = moduleRef.injector.get(MatDialog);
       const dialogRef = dialog.open(DialogComponent, options.config);
-      // dialogRef.afterClosed().subscribe(() => {
-      //   moduleRef.destroy();
-      // });
-      this.openDialogs.push({
+      if (autoDestroy === true) {
+        dialogRef.afterClosed().subscribe(() => {
+          moduleRef.destroy();
+        });
+      }
+      const result = {
         moduleRef,
         dialogRef,
-        autoDestroy: options.autoDestroy !== false,
-      });
-      return dialogRef;
+        autoDestroy: autoDestroy === true,
+      };
+      this.openDialogs.push(result);
+      return result;
     } catch (error) {
-      // moduleRef.destroy();
+      if (autoDestroy !== false) {
+        moduleRef.destroy();
+      }
       throw error;
     }
   }
