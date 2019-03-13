@@ -12,7 +12,7 @@ export interface AngyLazyOpenDialog {
 @Injectable()
 export class AngyLazyDialogService implements OnDestroy {
   constructor(
-    @Inject(ANGY_LAZY_DIALOG) private angyLazyDialogNamePathMap: AngyLazyDialogNamePathMap,
+    @Inject(ANGY_LAZY_DIALOG) private angyLazyDialogNamePathMaps: AngyLazyDialogNamePathMap[],
     @Inject(ANGY_LAZY_DIALOG_NG_MODULE_FACTORY_LOADER) private ngModuleFactoryLoader: NgModuleFactoryLoader,
     private injector: Injector,
   ) {}
@@ -39,8 +39,14 @@ export class AngyLazyDialogService implements OnDestroy {
   }
 
   getModulePath(name: string): string {
-    const modulePath = this.angyLazyDialogNamePathMap[name];
+    let modulePath: string | undefined;
+    for (const angyLazyDialogNamePathMap of this.angyLazyDialogNamePathMaps) {
+      modulePath = angyLazyDialogNamePathMap[name];
+      if (modulePath != null && modulePath !== "") break;
+    }
+
     if (modulePath == null || modulePath === "") {
+      console.log("Path Maps Available", this.angyLazyDialogNamePathMaps);
       throw new Error(`AngyLazyDialogService.getModulePath("${name}"): Path is not provided in @Inject(ANGY_LAZY_DIALOG)`);
     }
     return modulePath;

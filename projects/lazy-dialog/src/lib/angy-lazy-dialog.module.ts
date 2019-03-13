@@ -20,6 +20,19 @@ export class AngyLazyDialogModule {
         {
           provide: ANGY_LAZY_DIALOG,
           useValue: namePathMap,
+          multi: true,
+        },
+      ],
+    };
+  }
+  static forChild(namePathMap: AngyLazyDialogNamePathMap): ModuleWithProviders {
+    return {
+      ngModule: AngyLazyDialogModule,
+      providers: [
+        {
+          provide: ANGY_LAZY_DIALOG,
+          useValue: namePathMap,
+          multi: true,
         },
       ],
     };

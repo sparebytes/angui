@@ -24,6 +24,8 @@
       "@angy/address/*": ["dist/address/*"],
       "@angy/angy": ["dist/angy"],
       "@angy/angy/*": ["dist/angy/*"],
+      "@angy/lazy-dialog": ["dist/lazy-dialog"],
+      "@angy/lazy-dialog/*": ["dist/lazy-dialog/*"],
       "@angy/portal": ["dist/portal"],
       "@angy/portal/*": ["dist/portal/*"]
     }
