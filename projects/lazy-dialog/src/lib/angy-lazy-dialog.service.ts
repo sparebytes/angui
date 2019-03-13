@@ -27,7 +27,7 @@ export class AngyLazyDialogService implements OnDestroy {
       if (openDialog.autoDestroy) {
         try {
           openDialog.dialogRef.close();
-          openDialog.moduleRef.destroy();
+          // openDialog.moduleRef.destroy();
         } catch (error) {
           errors.push(error);
         }
@@ -72,9 +72,9 @@ export class AngyLazyDialogService implements OnDestroy {
       }
       const dialog = moduleRef.injector.get(MatDialog);
       const dialogRef = dialog.open(DialogComponent, options.config);
-      dialogRef.afterClosed().subscribe(() => {
-        moduleRef.destroy();
-      });
+      // dialogRef.afterClosed().subscribe(() => {
+      //   moduleRef.destroy();
+      // });
       this.openDialogs.push({
         moduleRef,
         dialogRef,
@@ -82,7 +82,7 @@ export class AngyLazyDialogService implements OnDestroy {
       });
       return dialogRef;
     } catch (error) {
-      moduleRef.destroy();
+      // moduleRef.destroy();
       throw error;
     }
   }
