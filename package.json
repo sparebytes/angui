@@ -12,6 +12,7 @@
     "build:lib": "ng build lazy-dialog && ng build address && ng build portal && ng build angy",
     "build:app": "ng build angy-app",
     "build:app:prod": "yarn build:app -c production",
+    "build:prod": "yarn run build:lib && yarn run build:app:prod",
     "serve:dist": "http-server ./dist/angy-app -p 4602"
   },
   "private": true,
