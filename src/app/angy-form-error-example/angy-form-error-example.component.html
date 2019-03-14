@@ -3,18 +3,22 @@
     <input type="text" matInput placeholder="name" formControlName="name" />
     <mat-error angy-form-error="name"></mat-error>
   </mat-form-field>
+
   <mat-form-field>
     <input type="text" matInput placeholder="email" formControlName="email" />
     <mat-error angy-form-error="email"></mat-error>
   </mat-form-field>
+
   <mat-form-field>
     <input type="text" matInput placeholder="coupon code" formControlName="couponCode" />
     <mat-error angy-form-error="couponCode"></mat-error>
   </mat-form-field>
+
   <div>
     <mat-checkbox formControlName="agree">Do you agree?</mat-checkbox>
     <div angy-form-error="agree"></div>
   </div>
+
   <button mat-button type="submit">submit</button>
   <button mat-button type="button" (click)="validate()">validate</button>
   <button mat-button type="button" (click)="reset()">reset</button>
