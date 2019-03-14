@@ -34,7 +34,6 @@ export class AngyFormErrorDirective implements OnDestroy {
   statusSubscription: Subscription = this.control$
     .pipe(switchMap(control => combineLatest(of(control), control ? control.statusChanges : of(null))))
     .subscribe(([control, status]) => {
-      console.log("VALIDATING", {control, status})
       if (control == null || status == null || status === "VALID") {
         this.errorKey = null;
         this.error = "";
@@ -55,7 +54,6 @@ export class AngyFormErrorDirective implements OnDestroy {
       } else {
         console.error("Invalid Control status: ", { control, status });
       }
-      console.log("ERROR IS", this.error);
     });
 
   @Input("angy-form-error")
@@ -76,7 +74,6 @@ export class AngyFormErrorDirective implements OnDestroy {
       control = value;
     }
     this.control$.next(control);
-    console.log("AnyFormError attached to", control);
   }
 
   @Input("hideAutoMessage")
