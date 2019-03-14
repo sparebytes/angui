@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "clean": "rimraf dist",
-    "build:lib": "ng build lazy-dialog && ng build address && ng build portal && ng build angy",
+    "build:lib": "ng build form-error && ng build lazy-dialog && ng build address && ng build portal && ng build angy",
     "build:app": "ng build angy-app",
     "build:app:prod": "yarn build:app -c production",
     "build:prod": "yarn run build:lib && yarn run build:app:prod",

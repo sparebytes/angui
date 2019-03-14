@@ -188,6 +188,21 @@
         }
       }
     },
+    "form-error": {
+      "root": "projects/form-error",
+      "sourceRoot": "projects/form-error/src",
+      "projectType": "library",
+      "prefix": "angy-form-error",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/form-error/tsconfig.lib.json",
+            "project": "projects/form-error/ng-package.json"
+          }
+        }
+      }
+    },
     "lazy-dialog": {
       "root": "projects/lazy-dialog",
       "sourceRoot": "projects/lazy-dialog/src",
