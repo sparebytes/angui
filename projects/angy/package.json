@@ -4,6 +4,15 @@
   "peerDependencies": {
     "@angular/common": ">=7.2.0",
     "@angular/core": ">=7.2.0",
+    "@angy/address": ">=0",
+    "@angy/form-error": ">=0",
+    "@angy/lazy-dialog": ">=0",
+    "@angy/portal": ">=0"
+  },
+  "devDependencies": {
+    "@angy/address": ">=0",
+    "@angy/form-error": ">=0",
+    "@angy/lazy-dialog": ">=0",
     "@angy/portal": ">=0"
   }
 }

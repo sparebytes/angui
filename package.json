@@ -1,6 +1,7 @@
 {
   "name": "angy-app",
   "version": "0.0.0",
+  "private": true,
   "scripts": {
     "ng": "ng",
     "start": "ng serve -c hot",
@@ -8,14 +9,13 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "clean": "rimraf dist",
-    "build:lib": "ng build form-error && ng build lazy-dialog && ng build address && ng build portal && ng build angy",
+    "clean": "rimraf dist && mkdir dist",
+    "build:lib": "lerna list -a --toposort --json | node ./scripts/lerna-build-lib.js",
     "build:app": "ng build angy-app",
     "build:app:prod": "yarn build:app -c production",
     "build:prod": "yarn run build:lib && yarn run build:app:prod",
     "serve:dist": "http-server ./dist/angy-app -p 4602"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~7.2.8",
     "@angular/cdk": "~7.3.3",
@@ -50,6 +50,7 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "lerna": "^3.13.1",
     "ng-packagr": "~4.7.1",
     "prettier": "~1.16.4",
     "protractor": "~5.4.0",
