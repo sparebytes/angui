@@ -19,7 +19,7 @@ import {
 export class AngyFormErrorDirective implements OnDestroy {
   constructor(
     @Inject(ANGY_FORM_ERROR_MESSAGES) private validationErrorMessageFunctions: AngyFormErrorMessages,
-    @Optional() private controlContainer: ControlContainer | undefined,
+    @Optional() private controlContainer?: ControlContainer,
   ) {}
 
   ngOnDestroy() {
