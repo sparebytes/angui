@@ -21,16 +21,7 @@
       "dom"
     ],
     "paths": {
-      "@angy/address": ["dist/address"],
-      "@angy/address/*": ["dist/address/*"],
-      "@angy/angy": ["dist/angy"],
-      "@angy/angy/*": ["dist/angy/*"],
-      "@angy/form-error": ["dist/form-error"],
-      "@angy/form-error/*": ["dist/form-error/*"],
-      "@angy/lazy-dialog": ["dist/lazy-dialog"],
-      "@angy/lazy-dialog/*": ["dist/lazy-dialog/*"],
-      "@angy/portal": ["dist/portal"],
-      "@angy/portal/*": ["dist/portal/*"]
+      "@angy/*": ["dist/*"]
     }
   }
 }

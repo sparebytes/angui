@@ -2,11 +2,7 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "paths": {
-      "@angy/address": ["projects/address/src/public_api"],
-      "@angy/angy": ["projects/angy/src/public_api"],
-      "@angy/form-error": ["projects/form-error/src/public_api"],
-      "@angy/lazy-dialog": ["projects/lazy-dialog/src/public_api"],
-      "@angy/portal": ["projects/portal/src/public_api"]
+      "@angy/*": ["projects/*/src/public_api"]
     }
   }
 }
