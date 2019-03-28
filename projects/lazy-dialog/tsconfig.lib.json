@@ -1,8 +1,7 @@
 {
   "extends": "../../tsconfig.lib.json",
   "compilerOptions": {
-    "outDir": "../../out-tsc/lib",
-    "baseUrl": "./"
+    "outDir": "../../out-tsc/lib"
   },
   "angularCompilerOptions": {
     "annotateForClosureCompiler": true,
