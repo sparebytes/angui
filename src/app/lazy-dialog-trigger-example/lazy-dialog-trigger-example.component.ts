@@ -1,5 +1,5 @@
-import { Component, OnDestroy } from "@angular/core";
-import { AngyLazyDialogService } from "projects/lazy-dialog/src/lib/angy-lazy-dialog.service";
+import { Component } from "@angular/core";
+import { AngyLazyDialogService } from "@angy/lazy-dialog";
 
 @Component({
   selector: "app-lazy-dialog-trigger-example",

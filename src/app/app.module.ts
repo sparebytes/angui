@@ -3,7 +3,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { RouterModule } from "@angular/router";
 import { AngyFormErrorModule } from "@angy/form-error";
-import { AngyLazyDialogModule } from "projects/lazy-dialog/src/public_api";
+import { AngyLazyDialogModule } from "@angy/lazy-dialog";
 import { AppMaterialModule } from "./app-material-module";
 import { AppComponent } from "./app.component";
 

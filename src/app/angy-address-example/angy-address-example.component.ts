@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { AngyAddressLoose } from "projects/address/src/public_api";
+import { AngyAddressLoose } from "@angy/address";
 
 @Component({
   selector: "app-angy-address-example",
