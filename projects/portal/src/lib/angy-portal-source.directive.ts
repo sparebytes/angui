@@ -7,8 +7,8 @@ export class AngyPortalSourceDirective implements OnInit, OnDestroy {
   templatePortal: TemplatePortal<any>;
   constructor(
     private AngyPortalService: AngyPortalService,
-    private templateRef: TemplateRef<any>,
-    private viewContainerRef: ViewContainerRef,
+    readonly templateRef: TemplateRef<any>,
+    readonly viewContainerRef: ViewContainerRef,
   ) {
     this.templatePortal = new TemplatePortal(this.templateRef, this.viewContainerRef);
   }

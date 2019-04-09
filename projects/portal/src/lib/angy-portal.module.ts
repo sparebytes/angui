@@ -9,6 +9,6 @@ const directives = [AngyPortalSourceDirective, AngyPortalSinkComponent];
 @NgModule({
   imports: [CommonModule, PortalModule],
   declarations: [directives],
-  exports: [directives],
+  exports: [directives, PortalModule],
 })
 export class AngyPortalModule {}
