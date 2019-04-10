@@ -1,14 +1,14 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnDestroy } from "@angular/core";
+import { ChangeDetectionStrategy, Component, Input, OnDestroy } from "@angular/core";
 import { BehaviorSubject, Observable, of } from "rxjs";
 import { distinctUntilChanged, switchMap } from "rxjs/operators";
-import { AngyPortalSourceDirective } from "./angy-portal-source.directive";
+import { AngyPortalSource } from "./angy-portal-source";
 import { AngyPortalService } from "./angy-portal.service";
 
 @Component({
   selector: "angyPortalSink,angy-portal-sink",
   template: `
-    <ng-container *ngFor="let angyPortalSourceDirective of (matchedPortalSources$ | async)">
-      <ng-template [cdkPortalOutlet]="angyPortalSourceDirective.templatePortal"></ng-template>
+    <ng-container *ngFor="let angyPortalSource of (matchedPortalSources$ | async)">
+      <ng-template [cdkPortalOutlet]="angyPortalSource.templatePortal"></ng-template>
     </ng-container>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -30,7 +30,7 @@ export class AngyPortalSinkComponent implements OnDestroy {
     this.portalName$.next(v == null ? null : v);
   }
 
-  readonly matchedPortalSources$: Observable<AngyPortalSourceDirective[]> = this.portalName$.pipe(
+  readonly matchedPortalSources$: Observable<AngyPortalSource[]> = this.portalName$.pipe(
     distinctUntilChanged(),
     switchMap(portalName => (portalName == null ? of([]) : this.portalService.filterByName$(portalName))),
   );
