@@ -3,8 +3,5 @@
   "dest": "../../dist/form-error",
   "lib": {
     "entryFile": "src/public_api.ts"
-  },
-  "whitelistedNonPeerDependencies": [
-    "@angui/form-utils"
-  ]
+  }
 }

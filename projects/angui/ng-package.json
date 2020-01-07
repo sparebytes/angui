@@ -3,11 +3,5 @@
   "dest": "../../dist/angui",
   "lib": {
     "entryFile": "src/public_api.ts"
-  },
-  "whitelistedNonPeerDependencies": [
-    "@angui/address",
-    "@angui/form-error",
-    "@angui/lazy-dialog",
-    "@angui/portal"
-  ]
+  }
 }
