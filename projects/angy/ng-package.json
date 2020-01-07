@@ -3,5 +3,11 @@
   "dest": "../../dist/angy",
   "lib": {
     "entryFile": "src/public_api.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "@angy/address",
+    "@angy/form-error",
+    "@angy/lazy-dialog",
+    "@angy/portal"
+  ]
 }

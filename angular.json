@@ -205,6 +205,21 @@
         }
       }
     },
+    "form-utils": {
+      "root": "projects/form-utils",
+      "sourceRoot": "projects/form-utils/src",
+      "projectType": "library",
+      "prefix": "angy-form-utils",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/form-utils/tsconfig.lib.json",
+            "project": "projects/form-utils/ng-package.json"
+          }
+        }
+      }
+    },
     "lazy-dialog": {
       "root": "projects/lazy-dialog",
       "sourceRoot": "projects/lazy-dialog/src",

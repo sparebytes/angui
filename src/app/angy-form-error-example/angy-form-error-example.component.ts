@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { angyFormErrorTouchRecursive } from "@angy/form-error";
+import { clearFormErrors } from "@angy/form-utils";
 
 @Component({
   selector: "app-angy-form-error-example",
@@ -22,20 +22,27 @@ export class AngyFormErrorExampleComponent {
   }
 
   validate() {
-    this.formGroup.controls.agree.markAsTouched();
-    angyFormErrorTouchRecursive(this.formGroup);
+    this.formGroup.markAllAsTouched();
+    this.formGroup.updateValueAndValidity();
+
     const valid = this.formGroup.valid;
-    console.log(this.formGroup.valid, this.formGroup.controls.agree.errors, this.formGroup.controls.agree.touched, this.formGroup.controls.agree.invalid);
+    console.log(
+      this.formGroup.valid,
+      this.formGroup.controls.agree.errors,
+      this.formGroup.controls.agree.touched,
+      this.formGroup.controls.agree.invalid,
+    );
   }
 
   reset() {
+    // console.log("before", JSON.stringify({ errors: this.formGroup.errors, values: this.formGroup.value }));
     this.formGroup.reset({
       name: "",
       email: "",
       couponCode: "",
       agree: false,
     });
-    this.formGroup.markAsPristine();
-    this.formGroup.markAsUntouched();
+    clearFormErrors(this.formGroup);
+    // console.log("after", JSON.stringify({ errors: this.formGroup.errors, values: this.formGroup.value }));
   }
 }

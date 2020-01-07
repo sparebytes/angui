@@ -1,18 +1,14 @@
 {
   "name": "@angy/angy",
   "version": "0.0.1",
+  "dependencies": {
+    "@angy/address": "0.0.1",
+    "@angy/form-error": "0.0.1",
+    "@angy/lazy-dialog": "0.0.1",
+    "@angy/portal": "0.0.1"
+  },
   "peerDependencies": {
     "@angular/common": ">=7.2.0",
-    "@angular/core": ">=7.2.0",
-    "@angy/address": ">=0",
-    "@angy/form-error": ">=0",
-    "@angy/lazy-dialog": ">=0",
-    "@angy/portal": ">=0"
-  },
-  "devDependencies": {
-    "@angy/address": ">=0",
-    "@angy/form-error": ">=0",
-    "@angy/lazy-dialog": ">=0",
-    "@angy/portal": ">=0"
+    "@angular/core": ">=7.2.0"
   }
 }
