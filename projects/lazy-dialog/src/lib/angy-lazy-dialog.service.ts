@@ -1,23 +1,23 @@
 import { Inject, Injectable, Injector, NgModuleFactory, NgModuleFactoryLoader, NgModuleRef, OnDestroy } from "@angular/core";
 import { MatDialog, MatDialogConfig, MatDialogRef } from "@angular/material";
-import { AngyLazyDialogNamePathMap } from "./angy-lazy-dialog-name-path-map";
-import { ANGY_LAZY_DIALOG, ANGY_LAZY_DIALOG_NG_MODULE_FACTORY_LOADER } from "./angy-lazy-dialog-token";
+import { AnguiLazyDialogNamePathMap } from "./angui-lazy-dialog-name-path-map";
+import { ANGUI_LAZY_DIALOG, ANGUI_LAZY_DIALOG_NG_MODULE_FACTORY_LOADER } from "./angui-lazy-dialog-token";
 
-export interface AngyLazyOpenDialog {
+export interface AnguiLazyOpenDialog {
   moduleRef: NgModuleRef<any>;
   dialogRef: MatDialogRef<any>;
   autoDestroy: boolean;
 }
 
 @Injectable()
-export class AngyLazyDialogService implements OnDestroy {
+export class AnguiLazyDialogService implements OnDestroy {
   constructor(
-    @Inject(ANGY_LAZY_DIALOG) private angyLazyDialogNamePathMaps: AngyLazyDialogNamePathMap[],
-    @Inject(ANGY_LAZY_DIALOG_NG_MODULE_FACTORY_LOADER) private ngModuleFactoryLoader: NgModuleFactoryLoader,
+    @Inject(ANGUI_LAZY_DIALOG) private anguiLazyDialogNamePathMaps: AnguiLazyDialogNamePathMap[],
+    @Inject(ANGUI_LAZY_DIALOG_NG_MODULE_FACTORY_LOADER) private ngModuleFactoryLoader: NgModuleFactoryLoader,
     private injector: Injector,
   ) {}
 
-  private openDialogs: AngyLazyOpenDialog[] = [];
+  private openDialogs: AnguiLazyOpenDialog[] = [];
 
   ngOnDestroy() {
     const openDialogs = this.openDialogs;
@@ -40,14 +40,14 @@ export class AngyLazyDialogService implements OnDestroy {
 
   getModulePath(name: string): string {
     let modulePath: string | undefined;
-    for (const angyLazyDialogNamePathMap of this.angyLazyDialogNamePathMaps) {
-      modulePath = angyLazyDialogNamePathMap[name];
+    for (const anguiLazyDialogNamePathMap of this.anguiLazyDialogNamePathMaps) {
+      modulePath = anguiLazyDialogNamePathMap[name];
       if (modulePath != null && modulePath !== "") break;
     }
 
     if (modulePath == null || modulePath === "") {
-      console.log("Path Maps Available", this.angyLazyDialogNamePathMaps);
-      throw new Error(`AngyLazyDialogService.getModulePath("${name}"): Path is not provided in @Inject(ANGY_LAZY_DIALOG)`);
+      console.log("Path Maps Available", this.anguiLazyDialogNamePathMaps);
+      throw new Error(`AnguiLazyDialogService.getModulePath("${name}"): Path is not provided in @Inject(ANGUI_LAZY_DIALOG)`);
     }
     return modulePath;
   }
@@ -57,7 +57,7 @@ export class AngyLazyDialogService implements OnDestroy {
     component: string;
     autoDestroy?: boolean | null;
     config?: MatDialogConfig<O>;
-  }): Promise<AngyLazyOpenDialog> {
+  }): Promise<AnguiLazyOpenDialog> {
     const autoDestroy = options.autoDestroy === true;
     const modulePath = this.getModulePath(options.module);
     const moduleFactory: NgModuleFactory<any> = await this.ngModuleFactoryLoader.load(modulePath);
@@ -66,7 +66,7 @@ export class AngyLazyDialogService implements OnDestroy {
       const DialogComponent = (moduleFactory.moduleType as any)[options.component];
       if (DialogComponent == null) {
         throw new Error(
-          `AngyLazyDialogService.openDialog(): "${options.component}" is not a static property on the module named "${
+          `AnguiLazyDialogService.openDialog(): "${options.component}" is not a static property on the module named "${
             options.module
           }".`,
         );

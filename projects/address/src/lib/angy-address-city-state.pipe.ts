@@ -1,11 +1,11 @@
 import { Pipe, PipeTransform } from "@angular/core";
-import { AngyAddressDisplayService } from "./angy-address-display.service";
-import { AngyAddressLoose } from "./angy-address.models";
+import { AnguiAddressDisplayService } from "./angui-address-display.service";
+import { AnguiAddressLoose } from "./angui-address.models";
 
-@Pipe({ name: "angyAddressCityState" })
-export class AngyAddressCityStatePipe implements PipeTransform {
-  constructor(private angyAddressDisplayService: AngyAddressDisplayService) {}
-  transform(address: AngyAddressLoose | null): string | null {
-    return this.angyAddressDisplayService.getCityState(address);
+@Pipe({ name: "anguiAddressCityState" })
+export class AnguiAddressCityStatePipe implements PipeTransform {
+  constructor(private anguiAddressDisplayService: AnguiAddressDisplayService) {}
+  transform(address: AnguiAddressLoose | null): string | null {
+    return this.anguiAddressDisplayService.getCityState(address);
   }
 }

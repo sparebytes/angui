@@ -7,43 +7,43 @@
 
 <br/><br/>
 
-<div *angyPortalSource="'PortalChild'">
-  <app-angy-portal-example-child-source></app-angy-portal-example-child-source>
+<div *anguiPortalSource="'PortalChild'">
+  <app-angui-portal-example-child-source></app-angui-portal-example-child-source>
 </div>
 
-<div *angyPortalSource="'PortalA'">This goes to sink 1. Count is {{ count }}</div>
+<div *anguiPortalSource="'PortalA'">This goes to sink 1. Count is {{ count }}</div>
 <ng-container *ngIf="toggle">
-	<div *angyPortalSource="'PortalA'">This goes to sink 1 as well</div>
+	<div *anguiPortalSource="'PortalA'">This goes to sink 1 as well</div>
 </ng-container>
 
-<div *angyPortalSource="'PortalB'">This goes to sink 2</div>
-<div *angyPortalSource="'PortalB'">
+<div *anguiPortalSource="'PortalB'">This goes to sink 2</div>
+<div *anguiPortalSource="'PortalB'">
 	This goes to sink 2 as well {{ foo }}
 	<button mat-raised-button (click)="count = count + 1" #testButton>Increment Count</button>
 </div>
 
 <div>
   Portal Child:
-  <app-angy-portal-example-child-sink></app-angy-portal-example-child-sink>
+  <app-angui-portal-example-child-sink></app-angui-portal-example-child-sink>
 </div>
 
 <br/><br/>
 
 <div>
   Portal A <small>(copy 1)</small>:
-  <angy-portal-sink angyPortalSink="PortalA"></angy-portal-sink>
+  <angui-portal-sink anguiPortalSink="PortalA"></angui-portal-sink>
 </div>
 
 <br/><br/>
 
 <div>
   Portal A <small>(copy 2)</small>:
-  <angy-portal-sink angyPortalSink="PortalA"></angy-portal-sink>
+  <angui-portal-sink anguiPortalSink="PortalA"></angui-portal-sink>
 </div>
 
 <br/><br/>
 
 <div>
   Portal B:
-  <angy-portal-sink angyPortalSink="PortalB"></angy-portal-sink>
+  <angui-portal-sink anguiPortalSink="PortalB"></angui-portal-sink>
 </div>

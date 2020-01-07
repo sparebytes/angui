@@ -1,24 +1,24 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
-import { AngyPortalModule } from "@angy/portal";
+import { AnguiPortalModule } from "@angui/portal";
 import { AppMaterialModule } from "../app-material-module";
-import { AngyPortalExampleChildSinkComponent } from "./angy-portal-example-child-sink.component";
-import { AngyPortalExampleChildSourceComponent } from "./angy-portal-example-child-source.component";
-import { AngyPortalExampleComponent } from "./angy-portal-example.component";
+import { AnguiPortalExampleChildSinkComponent } from "./angui-portal-example-child-sink.component";
+import { AnguiPortalExampleChildSourceComponent } from "./angui-portal-example-child-source.component";
+import { AnguiPortalExampleComponent } from "./angui-portal-example.component";
 
-const exported = [AngyPortalExampleComponent, AngyPortalExampleChildSinkComponent, AngyPortalExampleChildSourceComponent];
+const exported = [AnguiPortalExampleComponent, AnguiPortalExampleChildSinkComponent, AnguiPortalExampleChildSourceComponent];
 
 const routes = [
   {
     path: "",
-    component: AngyPortalExampleComponent,
+    component: AnguiPortalExampleComponent,
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes), CommonModule, AppMaterialModule, AngyPortalModule],
+  imports: [RouterModule.forChild(routes), CommonModule, AppMaterialModule, AnguiPortalModule],
   declarations: [exported],
   exports: [exported],
 })
-export class AngyPortalExampleModule {}
+export class AnguiPortalExampleModule {}

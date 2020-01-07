@@ -1,22 +1,22 @@
 import { Component, Input } from "@angular/core";
-import { AngyAddressLoose, AngyAddressStrict } from "../angy-address.models";
+import { AnguiAddressLoose, AnguiAddressStrict } from "../angui-address.models";
 
 @Component({
-  selector: "angy-address-block",
-  templateUrl: "./angy-address-block.component.html",
-  styleUrls: ["./angy-address-block.component.scss"],
+  selector: "angui-address-block",
+  templateUrl: "./angui-address-block.component.html",
+  styleUrls: ["./angui-address-block.component.scss"],
 })
-export class AngyAddressBlockComponent {
+export class AnguiAddressBlockComponent {
   constructor() {}
 
   @Input("address")
-  set _address(value: AngyAddressLoose | null) {
+  set _address(value: AnguiAddressLoose | null) {
     if (value == null) {
       this.address = null;
     } else {
-      this.address = AngyAddressLoose.normalize(value);
+      this.address = AnguiAddressLoose.normalize(value);
     }
   }
 
-  address?: AngyAddressStrict | null;
+  address?: AnguiAddressStrict | null;
 }

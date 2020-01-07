@@ -1,15 +1,15 @@
 import { Component } from "@angular/core";
-import { AngyAddressLoose } from "@angy/address";
+import { AnguiAddressLoose } from "@angui/address";
 
 @Component({
-  selector: "app-angy-address-example",
-  templateUrl: "./angy-address-example.component.html",
-  styleUrls: ["./angy-address-example.component.scss"],
+  selector: "app-angui-address-example",
+  templateUrl: "./angui-address-example.component.html",
+  styleUrls: ["./angui-address-example.component.scss"],
 })
-export class AngyAddressExampleComponent {
+export class AnguiAddressExampleComponent {
   constructor() {}
 
-  address: AngyAddressLoose = {
+  address: AnguiAddressLoose = {
     street1: "Street1",
     line2: "2 line",
     city: "Kenner",

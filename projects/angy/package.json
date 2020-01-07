@@ -1,11 +1,11 @@
 {
-  "name": "@angy/angy",
+  "name": "@angui/angui",
   "version": "0.0.1",
   "dependencies": {
-    "@angy/address": "0.0.1",
-    "@angy/form-error": "0.0.1",
-    "@angy/lazy-dialog": "0.0.1",
-    "@angy/portal": "0.0.1"
+    "@angui/address": "0.0.1",
+    "@angui/form-error": "0.0.1",
+    "@angui/lazy-dialog": "0.0.1",
+    "@angui/portal": "0.0.1"
   },
   "peerDependencies": {
     "@angular/common": ">=7.2.0",

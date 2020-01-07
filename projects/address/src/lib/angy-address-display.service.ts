@@ -1,13 +1,13 @@
 import { Injectable } from "@angular/core";
-import { AngyAddressLoose } from "./angy-address.models";
+import { AnguiAddressLoose } from "./angui-address.models";
 
 @Injectable({ providedIn: "root" })
-export class AngyAddressDisplayService {
-  getCityStateZip(address: AngyAddressLoose | null | undefined): string | null {
+export class AnguiAddressDisplayService {
+  getCityStateZip(address: AnguiAddressLoose | null | undefined): string | null {
     if (address == null) {
       return null;
     } else {
-      address = AngyAddressLoose.normalize(address);
+      address = AnguiAddressLoose.normalize(address);
       const result = [
         address.cityName,
         address.cityName && (address.stateCode || address.zipCode) ? ", " : " ",
@@ -22,11 +22,11 @@ export class AngyAddressDisplayService {
     }
   }
 
-  getCityState(address: AngyAddressLoose | null | undefined): string | null {
+  getCityState(address: AnguiAddressLoose | null | undefined): string | null {
     if (address == null) {
       return null;
     } else {
-      address = AngyAddressLoose.normalize(address);
+      address = AnguiAddressLoose.normalize(address);
       const result = [address.cityName, address.cityName && address.stateCode ? ", " : " ", address.stateCode]
         .join("")
         .replace(/ {2,}/g, " ")

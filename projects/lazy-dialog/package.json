@@ -1,5 +1,5 @@
 {
-  "name": "@angy/lazy-dialog",
+  "name": "@angui/lazy-dialog",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": ">=7.2.0",

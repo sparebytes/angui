@@ -1,14 +1,14 @@
 import { PortalModule } from "@angular/cdk/portal";
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { AngyPortalSinkComponent } from "./angy-portal-sink.component";
-import { AngyPortalSourceDirective } from "./angy-portal-source.directive";
+import { AnguiPortalSinkComponent } from "./angui-portal-sink.component";
+import { AnguiPortalSourceDirective } from "./angui-portal-source.directive";
 
-const directives = [AngyPortalSourceDirective, AngyPortalSinkComponent];
+const directives = [AnguiPortalSourceDirective, AnguiPortalSinkComponent];
 
 @NgModule({
   imports: [CommonModule, PortalModule],
   declarations: [directives],
   exports: [directives, PortalModule],
 })
-export class AngyPortalModule {}
+export class AnguiPortalModule {}

@@ -1,5 +1,5 @@
 {
-  "name": "@angy/form-utils",
+  "name": "@angui/form-utils",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/forms": ">=7.2.0"

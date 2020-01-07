@@ -1,3 +1,3 @@
-export interface AngyLazyDialogNamePathMap {
+export interface AnguiLazyDialogNamePathMap {
   [k: string]: string;
 }

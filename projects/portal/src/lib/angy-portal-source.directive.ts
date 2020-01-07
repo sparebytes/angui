@@ -1,13 +1,13 @@
 import { TemplatePortal } from "@angular/cdk/portal";
 import { Directive, Input, OnDestroy, OnInit, TemplateRef, ViewContainerRef } from "@angular/core";
-import { AngyPortalSource } from "./angy-portal-source";
-import { AngyPortalService } from "./angy-portal.service";
+import { AnguiPortalSource } from "./angui-portal-source";
+import { AnguiPortalService } from "./angui-portal.service";
 
-@Directive({ selector: "[angyPortalSource]" })
-export class AngyPortalSourceDirective implements AngyPortalSource, OnInit, OnDestroy {
+@Directive({ selector: "[anguiPortalSource]" })
+export class AnguiPortalSourceDirective implements AnguiPortalSource, OnInit, OnDestroy {
   templatePortal: TemplatePortal<any>;
   constructor(
-    private portalService: AngyPortalService,
+    private portalService: AnguiPortalService,
     readonly templateRef: TemplateRef<any>,
     readonly viewContainerRef: ViewContainerRef,
   ) {
@@ -19,6 +19,6 @@ export class AngyPortalSourceDirective implements AngyPortalSource, OnInit, OnDe
   ngOnDestroy() {
     this.portalService.remove(this);
   }
-  @Input("angyPortalSource")
+  @Input("anguiPortalSource")
   portalName?: string | null;
 }

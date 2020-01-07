@@ -2,7 +2,7 @@
  * Public API Surface of lazy-dialog
  */
 
-export * from "./lib/angy-lazy-dialog-name-path-map";
-export * from "./lib/angy-lazy-dialog-token";
-export * from "./lib/angy-lazy-dialog.module";
-export * from "./lib/angy-lazy-dialog.service";
+export * from "./lib/angui-lazy-dialog-name-path-map";
+export * from "./lib/angui-lazy-dialog-token";
+export * from "./lib/angui-lazy-dialog.module";
+export * from "./lib/angui-lazy-dialog.service";

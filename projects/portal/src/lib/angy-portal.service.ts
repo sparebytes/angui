@@ -1,34 +1,34 @@
 import { Injectable, OnDestroy } from "@angular/core";
 import { BehaviorSubject, Observable } from "rxjs";
 import { map } from "rxjs/operators";
-import { AngyPortalSource } from "./angy-portal-source";
+import { AnguiPortalSource } from "./angui-portal-source";
 
 @Injectable({ providedIn: "root" })
-export class AngyPortalService implements OnDestroy {
+export class AnguiPortalService implements OnDestroy {
   constructor() {}
-  angyPortalSources$ = new BehaviorSubject<AngyPortalSource[]>([]);
+  anguiPortalSources$ = new BehaviorSubject<AnguiPortalSource[]>([]);
 
   ngOnDestroy(): void {
-    this.angyPortalSources$.next([]);
+    this.anguiPortalSources$.next([]);
   }
 
-  add(angyPortalSource: AngyPortalSource): void {
-    this.angyPortalSources$.next([...this.angyPortalSources$.value, angyPortalSource]);
+  add(anguiPortalSource: AnguiPortalSource): void {
+    this.anguiPortalSources$.next([...this.anguiPortalSources$.value, anguiPortalSource]);
   }
 
-  remove(angyPortalSource: AngyPortalSource): void {
-    this.angyPortalSources$.next(this.angyPortalSources$.value.filter(p => p !== angyPortalSource));
+  remove(anguiPortalSource: AnguiPortalSource): void {
+    this.anguiPortalSources$.next(this.anguiPortalSources$.value.filter(p => p !== anguiPortalSource));
   }
 
-  filter$(predicateFn: (angyProtalSourceDirective: AngyPortalSource) => boolean): Observable<AngyPortalSource[]> {
-    return this.angyPortalSources$.pipe(
-      map(angyProtalSourceDirectives =>
-        angyProtalSourceDirectives.filter(angyProtalSourceDirective => predicateFn(angyProtalSourceDirective)),
+  filter$(predicateFn: (anguiProtalSourceDirective: AnguiPortalSource) => boolean): Observable<AnguiPortalSource[]> {
+    return this.anguiPortalSources$.pipe(
+      map(anguiProtalSourceDirectives =>
+        anguiProtalSourceDirectives.filter(anguiProtalSourceDirective => predicateFn(anguiProtalSourceDirective)),
       ),
     );
   }
 
-  filterByName$(portalName: string): Observable<AngyPortalSource[]> {
-    return this.filter$(angyProtalSourceDirective => angyProtalSourceDirective.portalName === portalName);
+  filterByName$(portalName: string): Observable<AnguiPortalSource[]> {
+    return this.filter$(anguiProtalSourceDirective => anguiProtalSourceDirective.portalName === portalName);
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Public API Surface of angy
+ * Public API Surface of angui
  */
 
-export * from "./lib/angy.module";
+export * from "./lib/angui.module";

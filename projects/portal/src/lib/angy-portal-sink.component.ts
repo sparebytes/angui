@@ -1,20 +1,20 @@
 import { ChangeDetectionStrategy, Component, Input, OnDestroy } from "@angular/core";
 import { BehaviorSubject, Observable, of } from "rxjs";
 import { distinctUntilChanged, switchMap } from "rxjs/operators";
-import { AngyPortalSource } from "./angy-portal-source";
-import { AngyPortalService } from "./angy-portal.service";
+import { AnguiPortalSource } from "./angui-portal-source";
+import { AnguiPortalService } from "./angui-portal.service";
 
 @Component({
-  selector: "angyPortalSink,angy-portal-sink",
+  selector: "anguiPortalSink,angui-portal-sink",
   template: `
-    <ng-container *ngFor="let angyPortalSource of (matchedPortalSources$ | async)">
-      <ng-template [cdkPortalOutlet]="angyPortalSource.templatePortal"></ng-template>
+    <ng-container *ngFor="let anguiPortalSource of (matchedPortalSources$ | async)">
+      <ng-template [cdkPortalOutlet]="anguiPortalSource.templatePortal"></ng-template>
     </ng-container>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AngyPortalSinkComponent implements OnDestroy {
-  constructor(public portalService: AngyPortalService) {}
+export class AnguiPortalSinkComponent implements OnDestroy {
+  constructor(public portalService: AnguiPortalService) {}
 
   ngOnDestroy() {
     this.portalName$.complete();
@@ -22,7 +22,7 @@ export class AngyPortalSinkComponent implements OnDestroy {
 
   readonly portalName$ = new BehaviorSubject<string | null>(null);
 
-  @Input("angyPortalSink")
+  @Input("anguiPortalSink")
   get portalName() {
     return this.portalName$.value;
   }
@@ -30,7 +30,7 @@ export class AngyPortalSinkComponent implements OnDestroy {
     this.portalName$.next(v == null ? null : v);
   }
 
-  readonly matchedPortalSources$: Observable<AngyPortalSource[]> = this.portalName$.pipe(
+  readonly matchedPortalSources$: Observable<AnguiPortalSource[]> = this.portalName$.pipe(
     distinctUntilChanged(),
     switchMap(portalName => (portalName == null ? of([]) : this.portalService.filterByName$(portalName))),
   );

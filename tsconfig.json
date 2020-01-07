@@ -2,7 +2,7 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "paths": {
-      "@angy/*": ["projects/*/src/public_api"]
+      "@angui/*": ["projects/*/src/public_api"]
     }
   }
 }

@@ -1,25 +1,25 @@
 import { Injectable, InjectionToken } from "@angular/core";
 
-export const ANGY_FORM_ERROR_MESSAGES = new InjectionToken<AngyFormErrorMessages>("ANGY_FORM_ERROR_MESSAGES");
+export const ANGUI_FORM_ERROR_MESSAGES = new InjectionToken<AnguiFormErrorMessages>("ANGUI_FORM_ERROR_MESSAGES");
 
-export type AngyFormErrorMessageFn<T = any> = (fieldName: string | null, value: any, err: T) => string;
-export type AngyFormErrorMessageHandler<T = any> = AngyFormErrorMessageFn<T> | string;
+export type AnguiFormErrorMessageFn<T = any> = (fieldName: string | null, value: any, err: T) => string;
+export type AnguiFormErrorMessageHandler<T = any> = AnguiFormErrorMessageFn<T> | string;
 
-export interface AngyFormErrorMessages {
-  [k: string]: AngyFormErrorMessageHandler<any>;
-  required: AngyFormErrorMessageHandler<any>;
-  numeric: AngyFormErrorMessageHandler<any>;
-  email: AngyFormErrorMessageHandler<any>;
-  pattern: AngyFormErrorMessageHandler<any>;
-  min: AngyFormErrorMessageHandler<{ actual: string; min: number }>;
-  max: AngyFormErrorMessageHandler<{ actual: string; max: number }>;
-  minlength: AngyFormErrorMessageHandler<{ actualLength: number; requiredLength: number }>;
-  maxlength: AngyFormErrorMessageHandler<{ actualLength: number; requiredLength: number }>;
+export interface AnguiFormErrorMessages {
+  [k: string]: AnguiFormErrorMessageHandler<any>;
+  required: AnguiFormErrorMessageHandler<any>;
+  numeric: AnguiFormErrorMessageHandler<any>;
+  email: AnguiFormErrorMessageHandler<any>;
+  pattern: AnguiFormErrorMessageHandler<any>;
+  min: AnguiFormErrorMessageHandler<{ actual: string; min: number }>;
+  max: AnguiFormErrorMessageHandler<{ actual: string; max: number }>;
+  minlength: AnguiFormErrorMessageHandler<{ actualLength: number; requiredLength: number }>;
+  maxlength: AnguiFormErrorMessageHandler<{ actualLength: number; requiredLength: number }>;
 }
 
 @Injectable()
-export class AngyFormErrorMessageDefaults implements AngyFormErrorMessages {
-  [k: string]: AngyFormErrorMessageHandler<any>;
+export class AnguiFormErrorMessageDefaults implements AnguiFormErrorMessages {
+  [k: string]: AnguiFormErrorMessageHandler<any>;
 
   required(fieldName: string | null, value: any) {
     return `required`;

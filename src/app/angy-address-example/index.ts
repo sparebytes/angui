@@ -1,2 +1,2 @@
-export * from "./angy-address-example.component";
-export * from "./angy-address-example.module";
+export * from "./angui-address-example.component";
+export * from "./angui-address-example.module";

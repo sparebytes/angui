@@ -1,5 +1,5 @@
 {
-  "name": "angy-app",
+  "name": "angui-app",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -11,10 +11,10 @@
     "e2e": "ng e2e",
     "clean": "rimraf dist && mkdir dist",
     "build:lib": "lerna list -a --toposort --json | node ./scripts/lerna-build-lib.js",
-    "build:app": "ng build angy-app",
+    "build:app": "ng build angui-app",
     "build:app:prod": "yarn build:app -c production",
     "build:prod": "yarn run build:lib && yarn run build:app:prod",
-    "serve:dist": "http-server ./dist/angy-app -p 4602"
+    "serve:dist": "http-server ./dist/angui-app -p 4602"
   },
   "dependencies": {
     "@angular/animations": "~8.2.14",

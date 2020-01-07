@@ -1,23 +1,23 @@
 import { CommonModule } from "@angular/common";
 import { ModuleWithProviders, NgModule } from "@angular/core";
-import { AngyFormErrorDirective } from "./angy-form-error.directive";
-import { AngyFormErrorMessageDefaults, ANGY_FORM_ERROR_MESSAGES } from "./angy-form-error-validation-message-functions";
+import { AnguiFormErrorDirective } from "./angui-form-error.directive";
+import { AnguiFormErrorMessageDefaults, ANGUI_FORM_ERROR_MESSAGES } from "./angui-form-error-validation-message-functions";
 
-const exported = [AngyFormErrorDirective];
+const exported = [AnguiFormErrorDirective];
 
 @NgModule({
   imports: [CommonModule],
   declarations: [exported],
   exports: [exported],
 })
-export class AngyFormErrorModule {
+export class AnguiFormErrorModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: AngyFormErrorModule,
+      ngModule: AnguiFormErrorModule,
       providers: [
         {
-          provide: ANGY_FORM_ERROR_MESSAGES,
-          useClass: AngyFormErrorMessageDefaults,
+          provide: ANGUI_FORM_ERROR_MESSAGES,
+          useClass: AnguiFormErrorMessageDefaults,
         },
       ],
     };

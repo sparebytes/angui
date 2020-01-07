@@ -1,2 +1,2 @@
-export * from "./angy-form-error-example.component";
-export * from "./angy-form-error-example.module";
+export * from "./angui-form-error-example.component";
+export * from "./angui-form-error-example.module";

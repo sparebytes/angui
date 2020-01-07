@@ -1,13 +1,13 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/angy",
+  "dest": "../../dist/angui",
   "lib": {
     "entryFile": "src/public_api.ts"
   },
   "whitelistedNonPeerDependencies": [
-    "@angy/address",
-    "@angy/form-error",
-    "@angy/lazy-dialog",
-    "@angy/portal"
+    "@angui/address",
+    "@angui/form-error",
+    "@angui/lazy-dialog",
+    "@angui/portal"
   ]
 }

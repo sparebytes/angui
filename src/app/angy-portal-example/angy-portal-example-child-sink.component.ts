@@ -1,9 +1,9 @@
 import { Component } from "@angular/core";
 
 @Component({
-  selector: "app-angy-portal-example-child-sink",
-  template: `<angy-portal-sink angyPortalSink="PortalChild"></angy-portal-sink>`,
+  selector: "app-angui-portal-example-child-sink",
+  template: `<angui-portal-sink anguiPortalSink="PortalChild"></angui-portal-sink>`,
 })
-export class AngyPortalExampleChildSinkComponent {
+export class AnguiPortalExampleChildSinkComponent {
   constructor() {}
 }

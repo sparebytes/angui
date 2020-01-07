@@ -1,2 +1,2 @@
-export * from "./angy-portal-example.component";
-export * from "./angy-portal-example.module";
+export * from "./angui-portal-example.component";
+export * from "./angui-portal-example.module";

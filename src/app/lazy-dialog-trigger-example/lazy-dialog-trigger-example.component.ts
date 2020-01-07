@@ -1,17 +1,17 @@
 import { Component } from "@angular/core";
-import { AngyLazyDialogService } from "@angy/lazy-dialog";
+import { AnguiLazyDialogService } from "@angui/lazy-dialog";
 
 @Component({
   selector: "app-lazy-dialog-trigger-example",
   templateUrl: "./lazy-dialog-trigger-example.component.html",
   styleUrls: ["./lazy-dialog-trigger-example.component.scss"],
-  providers: [AngyLazyDialogService],
+  providers: [AnguiLazyDialogService],
 })
 export class LazyDialogTriggerExampleComponent {
-  constructor(private angyLazyDialogService: AngyLazyDialogService) {}
+  constructor(private anguiLazyDialogService: AnguiLazyDialogService) {}
 
   async openLazyDialog() {
-    const dialogRef = this.angyLazyDialogService.openDialog({
+    const dialogRef = this.anguiLazyDialogService.openDialog({
       module: "LazyDialogExampleModule",
       component: "LazyDialogExampleComponent",
     });

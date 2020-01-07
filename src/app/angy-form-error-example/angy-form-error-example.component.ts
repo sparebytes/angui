@@ -1,13 +1,13 @@
 import { Component } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { clearFormErrors } from "@angy/form-utils";
+import { clearFormErrors } from "@angui/form-utils";
 
 @Component({
-  selector: "app-angy-form-error-example",
-  templateUrl: "./angy-form-error-example.component.html",
-  styleUrls: ["./angy-form-error-example.component.scss"],
+  selector: "app-angui-form-error-example",
+  templateUrl: "./angui-form-error-example.component.html",
+  styleUrls: ["./angui-form-error-example.component.scss"],
 })
-export class AngyFormErrorExampleComponent {
+export class AnguiFormErrorExampleComponent {
   constructor() {}
 
   formGroup = new FormGroup({

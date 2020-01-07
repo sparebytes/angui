@@ -1,13 +1,13 @@
 import { Pipe, PipeTransform } from "@angular/core";
-import { AngyAddressLoose, AngyAddressStrict } from "./angy-address.models";
+import { AnguiAddressLoose, AnguiAddressStrict } from "./angui-address.models";
 
-@Pipe({ name: "angyNormalizeAddress" })
-export class AngyNormalizeAddressPipe implements PipeTransform {
-  transform(address: AngyAddressLoose | null): AngyAddressStrict | null {
+@Pipe({ name: "anguiNormalizeAddress" })
+export class AnguiNormalizeAddressPipe implements PipeTransform {
+  transform(address: AnguiAddressLoose | null): AnguiAddressStrict | null {
     if (address == null) {
       return null;
     } else {
-      return AngyAddressLoose.normalize(address);
+      return AnguiAddressLoose.normalize(address);
     }
   }
 }

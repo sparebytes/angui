@@ -1,4 +1,4 @@
-export interface AngyAddressStrict {
+export interface AnguiAddressStrict {
   street1: string;
   street2: string;
   street3: string;
@@ -8,7 +8,7 @@ export interface AngyAddressStrict {
   countryCode: string;
 }
 
-export interface AngyAddressLoose {
+export interface AnguiAddressLoose {
   street1?: string | null;
   street2?: string | null;
   street3?: string | null;
@@ -36,8 +36,8 @@ export interface AngyAddressLoose {
   countryCode?: string | null;
 }
 
-export module AngyAddressLoose {
-  export function normalize(address: AngyAddressLoose | null | undefined): AngyAddressStrict {
+export module AnguiAddressLoose {
+  export function normalize(address: AnguiAddressLoose | null | undefined): AnguiAddressStrict {
     if (address == null) {
       address = {};
     }

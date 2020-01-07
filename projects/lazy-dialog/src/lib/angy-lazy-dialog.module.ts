@@ -1,6 +1,6 @@
 import { ModuleWithProviders, NgModule, SystemJsNgModuleLoader } from "@angular/core";
-import { AngyLazyDialogNamePathMap } from "./angy-lazy-dialog-name-path-map";
-import { ANGY_LAZY_DIALOG, ANGY_LAZY_DIALOG_NG_MODULE_FACTORY_LOADER } from "./angy-lazy-dialog-token";
+import { AnguiLazyDialogNamePathMap } from "./angui-lazy-dialog-name-path-map";
+import { ANGUI_LAZY_DIALOG, ANGUI_LAZY_DIALOG_NG_MODULE_FACTORY_LOADER } from "./angui-lazy-dialog-token";
 
 @NgModule({
   imports: [],
@@ -8,29 +8,29 @@ import { ANGY_LAZY_DIALOG, ANGY_LAZY_DIALOG_NG_MODULE_FACTORY_LOADER } from "./a
   entryComponents: [],
   exports: [],
 })
-export class AngyLazyDialogModule {
-  static forRoot(namePathMap: AngyLazyDialogNamePathMap): ModuleWithProviders {
+export class AnguiLazyDialogModule {
+  static forRoot(namePathMap: AnguiLazyDialogNamePathMap): ModuleWithProviders {
     return {
-      ngModule: AngyLazyDialogModule,
+      ngModule: AnguiLazyDialogModule,
       providers: [
         {
-          provide: ANGY_LAZY_DIALOG_NG_MODULE_FACTORY_LOADER,
+          provide: ANGUI_LAZY_DIALOG_NG_MODULE_FACTORY_LOADER,
           useClass: SystemJsNgModuleLoader,
         },
         {
-          provide: ANGY_LAZY_DIALOG,
+          provide: ANGUI_LAZY_DIALOG,
           useValue: namePathMap,
           multi: true,
         },
       ],
     };
   }
-  static forChild(namePathMap: AngyLazyDialogNamePathMap): ModuleWithProviders {
+  static forChild(namePathMap: AnguiLazyDialogNamePathMap): ModuleWithProviders {
     return {
-      ngModule: AngyLazyDialogModule,
+      ngModule: AnguiLazyDialogModule,
       providers: [
         {
-          provide: ANGY_LAZY_DIALOG,
+          provide: ANGUI_LAZY_DIALOG,
           useValue: namePathMap,
           multi: true,
         },

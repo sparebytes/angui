@@ -1,25 +1,25 @@
 import { Component, Inject, Input, OnDestroy, Optional } from "@angular/core";
 import { AbstractControl, ControlContainer } from "@angular/forms";
-import { watchControl } from "@angy/form-utils";
+import { watchControl } from "@angui/form-utils";
 import { BehaviorSubject, combineLatest, of, Subscription } from "rxjs";
 import { startWith, switchMap } from "rxjs/operators";
 import {
-  AngyFormErrorMessageHandler,
-  AngyFormErrorMessages,
-  ANGY_FORM_ERROR_MESSAGES,
-} from "./angy-form-error-validation-message-functions";
+  AnguiFormErrorMessageHandler,
+  AnguiFormErrorMessages,
+  ANGUI_FORM_ERROR_MESSAGES,
+} from "./angui-form-error-validation-message-functions";
 
-// @Directive({ selector: "[angy-form-error]" })
+// @Directive({ selector: "[angui-form-error]" })
 @Component({
-  selector: "[angy-form-error],mat-error[angy-form-error]",
+  selector: "[angui-form-error],mat-error[angui-form-error]",
   template: `
     <ng-container *ngIf="!hideAutoMessage">{{ error }}</ng-container>
     <ng-content *ngIf="error"></ng-content>
   `,
 })
-export class AngyFormErrorDirective implements OnDestroy {
+export class AnguiFormErrorDirective implements OnDestroy {
   constructor(
-    @Inject(ANGY_FORM_ERROR_MESSAGES) private validationErrorMessageFunctions: AngyFormErrorMessages,
+    @Inject(ANGUI_FORM_ERROR_MESSAGES) private validationErrorMessageFunctions: AnguiFormErrorMessages,
     @Optional() private controlContainer?: ControlContainer,
   ) {}
 
@@ -43,14 +43,14 @@ export class AngyFormErrorDirective implements OnDestroy {
       ),
     )
     .subscribe(([control, status]) => {
-      console.log("angy", { control, status });
+      console.log("angui", { control, status });
       if (control == null || status == null || status === "VALID") {
         this.errorKey = null;
         this.error = "";
       } else if (status === "INVALID") {
         const errorKey = (this.errorKey = Object.keys(control.errors!)[0]);
         const errorObj = control.errors![errorKey];
-        const messageHandler: AngyFormErrorMessageHandler = (this.validationErrorMessageFunctions as any)[errorKey];
+        const messageHandler: AnguiFormErrorMessageHandler = (this.validationErrorMessageFunctions as any)[errorKey];
         if (messageHandler == null) {
           this.error = "invalid";
         } else if (typeof messageHandler === "string") {
@@ -68,7 +68,7 @@ export class AngyFormErrorDirective implements OnDestroy {
 
   unwatchControlFn?: () => void;
 
-  @Input("angy-form-error")
+  @Input("angui-form-error")
   set _control(value: string | AbstractControl | null | undefined) {
     let control: AbstractControl | null;
     if (value == null) {

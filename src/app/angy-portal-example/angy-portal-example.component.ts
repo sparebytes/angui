@@ -1,11 +1,11 @@
 import { Component } from "@angular/core";
 
 @Component({
-  selector: "app-angy-portal-example",
-  templateUrl: "./angy-portal-example.component.html",
-  styleUrls: ["./angy-portal-example.component.scss"],
+  selector: "app-angui-portal-example",
+  templateUrl: "./angui-portal-example.component.html",
+  styleUrls: ["./angui-portal-example.component.scss"],
 })
-export class AngyPortalExampleComponent {
+export class AnguiPortalExampleComponent {
   constructor() {}
   foo = "bar"
   count = 0;

@@ -2,22 +2,22 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
-import { AngyFormErrorModule } from "@angy/form-error";
+import { AnguiFormErrorModule } from "@angui/form-error";
 import { AppMaterialModule } from "../app-material-module";
-import { AngyFormErrorExampleComponent } from "./angy-form-error-example.component";
+import { AnguiFormErrorExampleComponent } from "./angui-form-error-example.component";
 
-const exported = [AngyFormErrorExampleComponent];
+const exported = [AnguiFormErrorExampleComponent];
 
 const routes = [
   {
     path: "",
-    component: AngyFormErrorExampleComponent,
+    component: AnguiFormErrorExampleComponent,
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes), CommonModule, AppMaterialModule, ReactiveFormsModule, AngyFormErrorModule],
+  imports: [RouterModule.forChild(routes), CommonModule, AppMaterialModule, ReactiveFormsModule, AnguiFormErrorModule],
   declarations: [exported],
   exports: [exported],
 })
-export class AngyFormErrorExampleModule {}
+export class AnguiFormErrorExampleModule {}
