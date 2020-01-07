@@ -1,6 +1,6 @@
 {
   "name": "@angui/angui",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "peerDependencies": {
     "@angui/address": "0.0.1",
     "@angui/form-error": "0.0.1",
