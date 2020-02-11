@@ -43,7 +43,6 @@ export class AnguiFormErrorDirective implements OnDestroy, DoCheck {
       ),
     )
     .subscribe(([control, status]) => {
-      console.log("angui", { control, status });
       if (control == null || status == null || status === "VALID") {
         this.errorKey = null;
         this.error = "";
