@@ -1,4 +1,4 @@
-import { Component, Inject, Input, OnDestroy, Optional } from "@angular/core";
+import { Component, Inject, Input, OnDestroy, Optional, DoCheck } from "@angular/core";
 import { AbstractControl, ControlContainer } from "@angular/forms";
 import { watchControl } from "@angui/form-utils";
 import { BehaviorSubject, combineLatest, of, Subscription } from "rxjs";
@@ -17,7 +17,7 @@ import {
     <ng-content *ngIf="error"></ng-content>
   `,
 })
-export class AnguiFormErrorDirective implements OnDestroy {
+export class AnguiFormErrorDirective implements OnDestroy, DoCheck {
   constructor(
     @Inject(ANGUI_FORM_ERROR_MESSAGES) private validationErrorMessageFunctions: AnguiFormErrorMessages,
     @Optional() private controlContainer?: ControlContainer,
@@ -68,19 +68,35 @@ export class AnguiFormErrorDirective implements OnDestroy {
 
   unwatchControlFn?: () => void;
 
+  _control: string | AbstractControl | null | undefined;
+
   @Input("angui-form-error")
-  set _control(value: string | AbstractControl | null | undefined) {
+  get control() {
+    return this.control$.value;
+  }
+  set control(value: string | AbstractControl | null | undefined) {
+    this._control = value;
+    this.doCheckControl();
+  }
+
+  doCheckControl() {
+    const value = this._control;
     let control: AbstractControl | null;
     if (value == null) {
       control = null;
     } else if (typeof value === "string") {
-      if (this.controlContainer == null || this.controlContainer.control == null) {
-        throw new Error(`Control Container is null for "${value}".`);
-      }
-
-      control = this.controlContainer.control.get(value);
-      if (control == null) {
-        throw new Error(`Control "${value}" could not be found.`);
+      const controlContainer = this.controlContainer;
+      if (controlContainer == null) {
+        console.error(`Control Container is null for "${value}".`);
+        control = null;
+      } else if (controlContainer.control == null) {
+        // wait for a future time where the control is set.
+        control = null;
+      } else {
+        control = controlContainer.control.get(value) ?? null;
+        if (control == null) {
+          console.error(`Control "${value}" could not be found.`);
+        }
       }
     } else {
       control = value;
@@ -105,6 +121,10 @@ export class AnguiFormErrorDirective implements OnDestroy {
     }
 
     this.control$.next(control);
+  }
+
+  ngDoCheck() {
+    this.doCheckControl();
   }
 
   @Input("hideAutoMessage")

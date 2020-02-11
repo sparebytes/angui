@@ -1,4 +1,4 @@
-<form [formGroup]="formGroup" (submit)="submit()">
+<form *ngIf="formGroup" [formGroup]="formGroup" (submit)="submit()">
   <mat-form-field>
     <input type="text" matInput placeholder="name" formControlName="name" />
     <mat-error angui-form-error="name"></mat-error>
