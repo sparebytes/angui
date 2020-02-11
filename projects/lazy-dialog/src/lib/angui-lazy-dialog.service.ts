@@ -1,5 +1,5 @@
 import { Inject, Injectable, Injector, NgModuleFactory, NgModuleFactoryLoader, NgModuleRef, OnDestroy } from "@angular/core";
-import { MatDialog, MatDialogConfig, MatDialogRef } from "@angular/material";
+import { MatDialog, MatDialogConfig, MatDialogRef } from "@angular/material/dialog";
 import { AnguiLazyDialogNamePathMap } from "./angui-lazy-dialog-name-path-map";
 import { ANGUI_LAZY_DIALOG, ANGUI_LAZY_DIALOG_NG_MODULE_FACTORY_LOADER } from "./angui-lazy-dialog-token";
 
