@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "lazyModules": ["src/app/lazy-dialog-example/lazy-dialog-example.module"],
             "outputPath": "dist/angui-app",
             "index": "src/index.html",
@@ -55,10 +56,20 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
                 }
               ]
             },
             "hot": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "tsConfig": "src/tsconfig.hot.json"
             }
           }
@@ -157,7 +168,12 @@
             "tsConfig": "projects/angui/tsconfig.lib.json",
             "project": "projects/angui/ng-package.json"
           }
-        }
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "projects/angui/tsconfig.lib.prod.json"
+            }
+          }
+}
       }
     },
     "portal": {
@@ -172,7 +188,12 @@
             "tsConfig": "projects/portal/tsconfig.lib.json",
             "project": "projects/portal/ng-package.json"
           }
-        }
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "projects/portal/tsconfig.lib.prod.json"
+            }
+          }
+}
       }
     },
     "address": {
@@ -187,7 +208,12 @@
             "tsConfig": "projects/address/tsconfig.lib.json",
             "project": "projects/address/ng-package.json"
           }
-        }
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "projects/address/tsconfig.lib.prod.json"
+            }
+          }
+}
       }
     },
     "form-error": {
@@ -202,7 +228,12 @@
             "tsConfig": "projects/form-error/tsconfig.lib.json",
             "project": "projects/form-error/ng-package.json"
           }
-        }
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "projects/form-error/tsconfig.lib.prod.json"
+            }
+          }
+}
       }
     },
     "form-utils": {
@@ -217,7 +248,12 @@
             "tsConfig": "projects/form-utils/tsconfig.lib.json",
             "project": "projects/form-utils/ng-package.json"
           }
-        }
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "projects/form-utils/tsconfig.lib.prod.json"
+            }
+          }
+}
       }
     },
     "lazy-dialog": {
@@ -232,7 +268,12 @@
             "tsConfig": "projects/lazy-dialog/tsconfig.lib.json",
             "project": "projects/lazy-dialog/ng-package.json"
           }
-        }
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "projects/lazy-dialog/tsconfig.lib.prod.json"
+            }
+          }
+}
       }
     }
   },

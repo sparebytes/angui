@@ -8,15 +8,15 @@ import { AppMaterialModule } from "./app-material-module";
 import { AppComponent } from "./app.component";
 
 const routes = [
-  { path: "angui-address", loadChildren: "./angui-address-example/angui-address-example.module#AnguiAddressExampleModule" },
+  { path: "angui-address", loadChildren: () => import('./angui-address-example/angui-address-example.module').then(m => m.AnguiAddressExampleModule) },
   {
     path: "angui-form-error",
-    loadChildren: "./angui-form-error-example/angui-form-error-example.module#AnguiFormErrorExampleModule",
+    loadChildren: () => import('./angui-form-error-example/angui-form-error-example.module').then(m => m.AnguiFormErrorExampleModule),
   },
-  { path: "angui-portal", loadChildren: "./angui-portal-example/angui-portal-example.module#AnguiPortalExampleModule" },
+  { path: "angui-portal", loadChildren: () => import('./angui-portal-example/angui-portal-example.module').then(m => m.AnguiPortalExampleModule) },
   {
     path: "lazy-dialog-trigger",
-    loadChildren: "./lazy-dialog-trigger-example/lazy-dialog-trigger-example.module#LazyDialogTriggerExampleModule",
+    loadChildren: () => import('./lazy-dialog-trigger-example/lazy-dialog-trigger-example.module').then(m => m.LazyDialogTriggerExampleModule),
   },
 ];
 

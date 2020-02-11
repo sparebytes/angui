@@ -11,7 +11,7 @@ const exported = [AnguiFormErrorDirective];
   exports: [exported],
 })
 export class AnguiFormErrorModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<AnguiFormErrorModule> {
     return {
       ngModule: AnguiFormErrorModule,
       providers: [

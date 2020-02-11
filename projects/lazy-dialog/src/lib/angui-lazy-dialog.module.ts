@@ -9,7 +9,7 @@ import { ANGUI_LAZY_DIALOG, ANGUI_LAZY_DIALOG_NG_MODULE_FACTORY_LOADER } from ".
   exports: [],
 })
 export class AnguiLazyDialogModule {
-  static forRoot(namePathMap: AnguiLazyDialogNamePathMap): ModuleWithProviders {
+  static forRoot(namePathMap: AnguiLazyDialogNamePathMap): ModuleWithProviders<AnguiLazyDialogModule> {
     return {
       ngModule: AnguiLazyDialogModule,
       providers: [
@@ -25,7 +25,7 @@ export class AnguiLazyDialogModule {
       ],
     };
   }
-  static forChild(namePathMap: AnguiLazyDialogNamePathMap): ModuleWithProviders {
+  static forChild(namePathMap: AnguiLazyDialogNamePathMap): ModuleWithProviders<AnguiLazyDialogModule> {
     return {
       ngModule: AnguiLazyDialogModule,
       providers: [
